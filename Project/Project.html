@@ -16,7 +16,7 @@
                 <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
               </li>
               <li>
-                  <a class="nav-link active" aria-current="page" href="#">Bugs</a>
+                <a class="nav-link active" aria-current="page" href="bugPage.html">Bugs</a>
                 </li>
                
       </div>
@@ -26,8 +26,9 @@
     <div class="row mb-3" style="margin-top: 8%; padding: auto;">
         <label for="Title-col" class="col-sm-2 " style="padding-top: 1%;">Title</label>
         <div class="col-sm-3" style="padding-top: 1%;">
+          <input type="text" class="form-control" id="Search" placeholder="">
+          <input type="button" value="Search" onclick="search()">
           <input type="text" class="form-control" id="Title" placeholder="">
-          <button class="btn btn-success position-absolute end-0" id="btnsearch" onclick="search()"> Search</button>
         </div>
       </div>
       <div class="row mb-3">
@@ -71,37 +72,75 @@
         </div>
        </div>
        <div style="padding-left: 20%;" >
-        <button type="submit" onclick="StoreData()" class="btn btn-success" id="btn btn-success ">Submit</button>
+        <button onclick="StoreData()" class="btn btn-success" id="btn btn-success ">Edit</button>
        </div>
 
     </div>
     <script>
 
-      let ticket = JSON.parse(localStorage.getItem('Tickets')).value;
-      let title = document.getElementById('Title').value;
-      let decription = document.getElementById('DescriptionText').value;
-      let Identified = document.getElementById('identifiedBy').value;
-      let date = document.getElementById('dateFound').value;
-      let projectName = document.getElementById('projectName').value;
-      let assignedTo = document.getElementById('assignedTo').value;
-      let Status = document.getElementById("Status").value;
-
+      let transfer;
 
       function search() {
-        let tickets = localStorage.getItem('Tickets');
-        console.log(tickets);
-        let count = 1
-        bFound = false;
-        while (bFound == false || count<tickets.length) {
-          if (title == ticket[count].title) {
-            bFound = true;
-          }
-          count++;
-        }
-        alert(bFound);
-      }
+        let Tickets = JSON.parse(localStorage.getItem('Tickets'));
+        let bFind = false;
+        let title = document.getElementById('Search').value;
+        let location;
 
-      search();
+        for (let k = 0; k < Tickets.length; k++) {
+          if (Tickets[k].title == title) {
+            bFind = true;
+            location = k;
+            break;
+          }
+        }
+
+        if (bFind === true) {
+          document.getElementById('identifiedBy').value = Tickets[location].Identified;
+          document.getElementById('Title').value = Tickets[location].title;
+          document.getElementById('DescriptionText').value = Tickets[location].decription;
+          document.getElementById('dateFound').value = Tickets[location].date;
+          document.getElementById('projectName').value = Tickets[location].projectName;
+          document.getElementById('assignedTo').value =Tickets[location].assignedTo;
+
+        } else {
+            alert('No entry could be found with that title');
+        }
+        transfer = location;
+      }
+  
+      function StoreData() {
+        let title = document.getElementById('Title').value;
+        let decription = document.getElementById('DescriptionText').value;
+        let Identified = document.getElementById('identifiedBy').value;
+        let date = document.getElementById('dateFound').value;
+        let projectName = document.getElementById('projectName').value;
+        let assignedTo = document.getElementById('assignedTo').value;
+        //let Status = document.getElementById("Status").value;
+      
+        let Tickets = JSON.parse(localStorage.getItem('Tickets'));
+
+        console.log(transfer);
+        
+        let Ticket ={
+            title: title,
+            decription : decription,
+            Identified : Identified,
+            date : date,
+            projectName : projectName,
+            assignedTo : assignedTo,
+            Status :  Tickets[transfer].Status
+        }
+
+        Tickets.splice(transfer,1);
+
+        //let arrTicket = new Array();
+        Tickets.push(Ticket);
+        localStorage.removeItem("Tickets");
+        localStorage.setItem('Tickets',JSON.stringify(Tickets));
+
+        window.location.replace('index.html');
+    };
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
