@@ -37,7 +37,7 @@ We developed an application that is able to track different bug in an system. Th
 # Visuals
 
  <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo1" alt="Logo" width="80" height="80">
+    <img src="images/photo1"  width="80" height="80">
   </a>
 
 <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
