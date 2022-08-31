@@ -37,26 +37,28 @@ We developed an application that is able to track different bug in an system. Th
 # Visuals
 
  <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo1.jpeg"  width="80" height="80">
+    <img src="images/photo1.jpeg"  width="80" height="120">
   </a>
 
 <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo2.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/photo2.jpeg" alt="Logo" width="80" height="120">
   </a>
 
 <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo3.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/photo3.jpeg" alt="Logo" width="80" height="120">
   </a>
 
 
 <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo4.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/photo4.jpeg" alt="Logo" width="80" height="120">
   </a>
   
   <a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
-    <img src="images/photo5.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/photo5.jpeg" alt="Logo" width="80" height="120">
   </a>
-
+<a href="https://github.com/Chanellevs/Bug-tracker/edit/main/README.md">
+    <img src="images/photo1" alt="Logo" width="80" height="120">
+  </a>
 
 
 ## tools
