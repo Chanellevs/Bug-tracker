@@ -33,3 +33,23 @@ We developed an application that is able to track different bug in an system. Th
 - add bugs 
 - search bug
 - edit bug 
+
+# Visuals
+
+
+
+
+
+
+
+
+
+
+
+## tools
+- html
+- css
+- javascript 
+- bootstrap
+
+
