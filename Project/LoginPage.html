@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bug tracker</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <style>
+      .container{
+      height: 100%;
+      align-content: center;
+    }
+    .bgcolour{
+      height: 230px;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 500px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 5%;
+    }
+   
+    .class1{
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .class2{
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      
+    }
+    .class3{
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ </style>
+  <body>
+    <div id="intro" class="bg-image vh-100 shadow-1-strong position-static">
+      <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+        <source class="h-100" src="bugcss/loginformbg.mp4" type="video/mp4" />
+      </video> 
+    </div>
+    <form>
+
+       <div class="container fixed-top">
+       <div class="d-flex justify-content-center h-100 ">
+       <div class="bgcolour 3 display " >
+        <div class="row mb-2 class1">
+            <label for="inputUserName" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputUserName">
+            </div>
+          </div>
+          <div>
+            <div class="row mb-2 class2">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+              <div class="class3">
+                <button type="button" class="btn btn-success" id="btn btn-success1" onclick="login()">Sign in</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+          
+       
+      </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script defer>
+      function login() {
+      let username = document.getElementById("inputUserName").value;
+      let password = document.getElementById("inputPassword").value;
+       if(username =='powerpuff' && password == '1234')
+       {
+           window.location.href="./Homepage.html";
+         
+       }
+    }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bug tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <style>
+     .class1{
+      background-color: gray;
+     }
+  </style>
+  <body>
+    <nav class ="navbar navbar-expand-lg text-bg-success p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <img src="/Project/bugcss/bug " alt="" width="40" height="34">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li>
+                  <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link active" aria-current="page" href="#">Bugs</a>
+                  </li>
+                  <li>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+        </div>
+    </nav>
+    <div class="row g-3 " style="height: 90px; margin-top: 5px;" >
+    <div class="col-sm-4 " style="margin-left:10px">
+    <h4>All Bugs</h4>
+    </div>
+    <div class="col ">
+      <a href="submit.html"><button type="submit" class="btn btn-success position-absolute end-0 " >Add</button></a>
+      <a href="Project.html"><button type="submit" class="btn btn-success position-absolute end-1" >Edit</button></a>
+
+    </div>
+  </div>
+ 
+    <div class="row g-3 text-bg-light p-3" >
+        <div class="col" id="new">
+          <h5>New Bugs</h5>
+          <div class="Open  border border-success p-2 border-opacity-50 class1" >
+            
+          </div>
+        </div>
+        <div class="col  " id="overdue">
+            <h5>Overdue</h5> 
+            <div class="Overdue border border-success p-2 border-opacity-50">
+            
+            </div>
+        </div>
+        <div class="col  " id="fixed">
+          <h5>Fixed Bugs</h5>
+          <div class="Resolved border border-success p-2 border-opacity-50">
+            
+          </div>
+        </div>
+      </div>
+
+       
+    <script>
+     
+let ticket = JSON.parse(localStorage.getItem('Tickets'));
+
+
+for (let i = 0; i <ticket.length; i++) {
+  let New = document.createElement("div");
+  New.className = 'Ticket'
+   
+  console.log(ticket[i]);
+
+  New.innerHTML = `<h3>${ticket[i].title}
+    </h3><p>${ticket[i].date}
+    </p><h5>Description</h5><p>
+     ${ticket[i].decription}</p>
+    <p><strong>Found by: </strong>${ticket[i].Identified}</p>
+    <p><strong>Assigned to:</strong> ${ticket[i].assignedTo}</p>`
+   
+    
+  
+    let to;
+        switch (ticket[i].Status) {
+          case 'Open':
+          to = document.getElementsByClassName('Open')[0];
+            break;
+          case 'Resolved':
+          to = document.getElementsByClassName('Resolved')[0];
+            break;
+          case 'Overdue':
+          to = document.getElementsByClassName('Overdue')[0];  
+            break;
+        }
+        console.log(to)
+        to.appendChild(New);
+}
+
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
